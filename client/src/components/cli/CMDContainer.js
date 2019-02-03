@@ -16,14 +16,16 @@ class CMDContainer extends Component {
   onSubmit(e) {
     e.preventDefault();
     if (this.state.command == "cls") {
-      this.setState({ command: "", history: [] });
+      this.setState({ command: "", history: [], status: false });
     } else {
       switch (this.state.command) {
         case "run":
           this.props.toggleStatus(true);
+          this.setState({ status: true });
           break;
         case "stop":
           this.props.toggleStatus(false);
+          this.setState({ status: false });
           break;
       }
       let updatedHistory = this.state.history;
@@ -39,11 +41,25 @@ class CMDContainer extends Component {
     this.setState({ command: e.target.value });
   }
   render() {
+    let loading;
+    if (this.state.status) {
+      loading = (
+        <div>
+          <p>running object detection on footage...</p>
+        </div>
+      );
+    }
     let rows = this.state.history.map((row, index) => {
       return (
         <form readOnly={true} key={index} id="cli-form" className="flex-row">
           <p>$:</p>
-          <input readOnly={true} value={row} id="cli-input" type="text" />
+          <input
+            style={{ color: "white" }}
+            readOnly={true}
+            value={row}
+            id="cli-input"
+            type="text"
+          />
         </form>
       );
     });
@@ -52,9 +68,11 @@ class CMDContainer extends Component {
         <div className="flex-column">
           <p>Welcome (run a command to get started)</p>
           {rows}
+          {loading}
           <form id="cli-form" onSubmit={this.onSubmit} className="flex-row">
             <p>$:</p>
             <input
+              style={{ color: "white" }}
               autoComplete="off"
               onChange={this.onChange}
               value={this.state.command}

@@ -12,9 +12,9 @@ class VideoContainer extends Component {
     return (
       <div className="VideoContainer">
         <div id="video-container" className="flex-column">
-          <h1>CloudTect - object detection</h1>
-          <small>Your Feed</small>
-          <img id="video" src={link} />
+          <h1>CloudTect - Object Detection</h1>
+          <h4>Your Feed</h4>
+          <img id="video" src={link} alt="" />
           <small id="image-info">{time}</small>
         </div>
         <div id="output-container" className="flex-column" />

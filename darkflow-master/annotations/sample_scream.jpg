@@ -1,0 +1,22 @@
+<annotation>
+  <folder>sample_img/</folder>
+  <filename>sample_scream.jpg</filename>
+  <segmented>0</segmented>
+  <size>
+    <width>352</width>
+    <height>448</height>
+    <depth>3</depth>
+  </size>
+  <object>
+    <name>pistol</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>96</xmin>
+      <ymin>195</ymin>
+      <xmax>265</xmax>
+      <ymax>327</ymax>
+    </bndbox>
+  </object>
+</annotation>

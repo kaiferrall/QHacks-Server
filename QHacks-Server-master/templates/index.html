@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    body {
+      font-family: "Raleway", sans-serif;
+      padding: 0;
+    }
+    img {
+      box-shadow: 10px 9px 44px -11px rgba(0, 0, 0, 0.75);
+      border-radius: 10px;
+      width: 800px;
+      height: 600px;
+    }
+    .container {
+      display: flex;
+      flex-direction: row;
+      height: 100vh;
+      text-align: center;
+    }
+    .left {
+      background-color: #f9fafc;
+      width: 60vw;
+    }
+    .img-container {
+      margin-top: 40px;
+    }
+    .right {
+      width: 40vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .model-output {
+      box-shadow: 10px 9px 44px -11px rgba(0, 0, 0, 0.75);
+      background-color: #efefef;
+      height: 500px;
+      width: 400px;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="left">
+        <div class="img-container">
+          <img id="video" src="video_feed" />
+        </div>
+        <br />
+        <small>Your video stream</small>
+      </div>
+      <div class="right">
+        <h1>Model Statistics</h1>
+        <hr />
+        <div class="model-output">
+          <p>model output here</p>
+
+          <p> Our results {{ results  }} </p>
+          
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
